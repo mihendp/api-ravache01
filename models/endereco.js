@@ -1,41 +1,42 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
+/*const Sequelize = require('sequelize');
 const { type } = require('os');
-const { isNumberObject } = require('util/types');
-const sequelize = new Sequelize('sqlite::memory:');
+const { isNumberObject } = require('util/types');*/
+const sequelize = new Sequelize('postgres://postgres:banco123@localhost:5432/apinode');
 
-const Endereco = sequelize.define(
-    'Endereco',
-    {
-        id: {
+class Endereco extends Model {}
+
+Endereco.init({
+        Id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true
         },
-        cep: {
+        Cep: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        numero: {
+        Numero: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        complemento: {
+        Complemento: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        bairro: {
+        Bairro: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        cidade: {
+        Cidade: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        estado: {
+        Estado: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        municipioIBGE: {
+        MunicipioIBGE: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -45,3 +46,5 @@ const Endereco = sequelize.define(
         tableName: 'enderecos',
         timestamps: true
     });
+
+    module.exports = Endereco;

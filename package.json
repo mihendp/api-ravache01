@@ -1,10 +1,14 @@
 {
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "axios": "^1.7.3",
     "express": "^4.19.2",
     "pg": "^8.12.0",
     "pg-hstore": "^2.3.4",
-    "sequelize": "^6.37.3"
+    "react": "^18.3.1",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
   },
   "name": "miguel",
   "version": "1.0.0",
